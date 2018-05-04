@@ -1,0 +1,30 @@
+{
+  "name": "express-locallibrary-tutorial",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node8 ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
+    "mysql": "~2.14.1",
+    "node-datetime": "~2.0.0",
+    "nodemailer": "~4.1.0",
+    "nodemailer-smtp-transport": "~2.7.4",
+    "simplemde": "~1.11.2",
+    "multer": "~1.3.0",
+    "nunjucks": "~3.0.1",
+    "nodemailer-wellknown": "~0.2.3",
+    "async": "~2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "~1.11.0"
+  }
+}

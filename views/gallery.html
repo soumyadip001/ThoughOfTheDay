@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-lg-6">
+			<h3 class="secondary_header">Uploaded Images Will be shown here</h3>
+			{% for uploaded_images in uploaded_images_data %}
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+					<img class="img-responsive" src='/uploaded_img/{{uploaded_images.uploaded_path}}' style='margin-bottom:10px;' />
+					<a href="/gallery/remove/{{uploaded_images.file_id}}" class="btn_gallery_image_delete">
+						<i class="fa fa-trash-o"></i></a>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-info">
+				<div class="panel-heading"> Upload Images Here</div>
+				<div class="panel-body">
+					<form method='post' action='/gallery/upload_image' enctype='multipart/form-data' id='frmUploader'>
+						<div class="form-group">
+							<label for='imgUploader'>File input:</label>
+							<input type='file' name='imgUploader' id='imgUploader' multiple />
+							<p class="help-block">Please choose a valid image (*.png, *.jpg, *.jpeg)</p>
+						</div>
+						<button class="btn btn-info" type='submit'>Upload</button>
+					</form>
+				</div>
+				<div class="panel-footer">
+					<p> Note: You can upload at most 10 images at a time.</p>
+				</div>
+			</div>
+			{% if flashMessage %}
+				<p class="alert alert-danger">{{errorMsg}}</p>
+			{% endif %}
+			{% if flashMessage %}
+				<p class="alert alert-danger">{{flashMessage}}</p>
+			{% endif %}
+			{% if flashMessageSuccess %}
+				<p class="alert alert-success">{{flashMessageSuccess}}</p>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block additional_JS %}
+	<script type="text/javascript" src='/javascripts/jquery.form.min.js'></script>
+	<script type="text/javascript" src='/javascripts/file_upload.js'></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+table td{
+	padding: 5px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.error_flash{
+	color: red;
+}
+
+.success_flash{
+	color: green;
+}
+
+.space-left{
+	margin-left: 10px;
+}
+.margin-top{
+	margin-top: 10px;
+}
+.secondary_header, p, .primary_header
+{
+	font-family: Lato;
+	text-transform: uppercase;
+}
+.btn_gallery_image_delete{
+	margin-top: -27px;
+	position: absolute;
+	background: #fff;
+	color: #b94a48;
+	margin-left: 0px;
+}

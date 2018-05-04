@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	.main.container
+		.row
+			.col-md-6.col-md-offset-3
+				h1 Welcome to your profile #{username}
+				a(href='/users/logout')
+					i.fa.fa-sign-out
+					span logout
+				|
+				|
+				a.space-left(href='/address_book')
+					i.fa.fa-book
+					span  addressbook
+		h2 Profile Details
+		p Full Name - #{user_data.full_name}
+		p Age - #{user_data.age}
+
+		h2 All created mails
+		p Here is the list of all mails created. To view any mail click on the 'view' button
+		a(href='/scheduler/crete_schedule') + create new note
+		
+		table(border='1px')
+				for pending_mail in pending_mails_data
+					tr
+						td= pending_mail.id
+						td= pending_mail.mail_title
+						td= pending_mail.schedule_date
+						td= pending_mail.schedule_time
+						td
+							a(href='/scheduler/view/'+pending_mail.id) View
+						td
+							a(href='/scheduler/delete/'+pending_mail.id) Delete
+						td= pending_mail.status
+
+		p.error_flash #{flashMessage}
+		p.success_flash #{flashMessageSuccess}

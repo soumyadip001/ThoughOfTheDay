@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="jumbotron">
+		<h2 class="secondary_header">Welcome to {{title}}</h2>
+		<p>Create template | Schedule mail | Check delivery</p>
+		<p>
+			<a class="btn btn-primary btn-lg" href="/users/login" role="button">login</a>
+			<a class="btn btn-default btn-lg" href="/users/signup" role="button">signup</a>
+		</p>
+	</div>
+{% endblock %}
